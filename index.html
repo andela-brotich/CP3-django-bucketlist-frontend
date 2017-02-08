@@ -2,11 +2,20 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>cp3-django-bucketlist-frontend</title>
+    <title>Bucket List Front End</title>
+    <link href="/static/css/MaterialIcons" rel="stylesheet">
+    <link href="/static/css/materialize.css" rel="stylesheet">
     <link rel="stylesheet" href="dist/build.css">
   </head>
   <body>
-    <div id="app"></div>
+    <div id="app">
+      <div class="container">
+        <router-view></router-view>
+      </div>
+
+    </div>
+    <script src="/static/js/jquery.min.js"></script>
+    <script src="/static/js/materialize.min.js"></script>
     <script src="dist/build.js"></script>
   </body>
 </html>

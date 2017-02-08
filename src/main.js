@@ -1,10 +1,24 @@
-// The following line loads the standalone build of Vue instead of the runtime-only build,
-// so you don't have to do: import Vue from 'vue/dist/vue'
-// This is done with the browser options. For the config, see package.json
-import Vue from 'vue'
-import App from './App.vue'
+import Vue from 'vue';
+import VueRouter from 'vue-router';
+import VueLocalStorage from 'vue-localstorage';
+import VueAxios from 'vue-axios';
 
-new Vue({ // eslint-disable-line no-new
-  el: '#app',
-  render: (h) => h(App)
-})
+import axios from 'axios';
+import Materials from "vue-materials";
+
+import routes from './routes';
+
+Vue.use(Materials);
+Vue.use(VueRouter);
+Vue.use(VueLocalStorage);
+Vue.use(VueAxios, axios);
+
+export const router = new VueRouter({
+    routes,
+    mode: 'history',
+    linkActiveClass: 'active'
+});
+
+new Vue({
+    router: router
+}).$mount('#app');
